@@ -9,6 +9,10 @@ import UIKit
 
 extension CalculatorViewController: CustomButtonDelegate {
     func buttonTapped(sender: UIButton) {
+       sender.alpha = 0.5
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(150)) {
+            sender.alpha = 1
+        }
         switch sender.tag {
         //Buttons 0...9
         case 0...9:
